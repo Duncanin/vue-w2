@@ -1,4 +1,5 @@
 <template>
+  
   <div class="p-6">
     <h1 class="text-2xl font-bold mb-6">Todo</h1>
 
@@ -125,7 +126,7 @@
 
   //  驗證
   const user = ref({
-    nuckname:'',
+    nickname:'',
     uid:'',
   })
 

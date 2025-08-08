@@ -1,36 +1,40 @@
 <template>
-<h1>複習</h1>
-<h1 class="text-4xl font-bold text-blue-600">這是 Tailwind 測試</h1>
+  <div class="container">
+    <h1>複習</h1>
+    <h1 class="text-4xl font-bold text-blue-600">這是 Tailwind 測試</h1>
+    <br>
+    <br>
+    <div class="bg-white [&>*]:border">
+      <input type="text" v-model="newName">
+      {{ newName }}
+      <input type="text" v-model="newNumber">
+      {{ newNumber }}
+      <button type="button" @click="addProduct" class="bg-green-400 px-4 py-2 rounded text-white cursor-pointer border">
+        新增到資料集
+      </button>
+    </div>
 <br>
-<br>
-<div>
-  <input type="text" v-model="newName">
-  {{ newName }}
-  <input type="text" v-model="newNumber">
-  {{ newNumber }}
-  <button type="button" @click="addProduct" class="bg-green-400 px-4 py-2 rounded text-white cursor-pointer border">
-    新增到資料集
-  </button>
-</div>
-<table class="bg-blue-200 table-auto">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Price</th>
-      <th>justified price</th>
-      <th>Delete</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="item in data" :key="item.id">
-      <td>{{ item.name }}</td>
-      <td>{{ item.price }}</td>
-      <td><input type="number" v-model="item.price"></td>
-      <td><button type="button" @click="delItem(item.id)" class="bg-green-400 px-4 py-2 rounded text-white cursor-pointer border">刪除品項</button></td>
-    </tr>
-  </tbody>
-  <div>總價：{{ sum }}</div>
-</table>
+    <table class="bg-blue-200 table-auto [&_*]:border-1 [&_*]:p-2">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Price</th>
+          <th>justified price</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in data" :key="item.id">
+          <td>{{ item.name }}</td>
+          <td>{{ item.price }}</td>
+          <td><input type="number" v-model="item.price"></td>
+          <td><button type="button" @click="delItem(item.id)" class="bg-green-400 px-4 py-2 rounded text-white cursor-pointer border">刪除品項</button></td>
+        </tr>
+      </tbody>
+      <div>總價：{{ sum }}</div>
+    </table>
+
+  </div>
 
 </template>
 
@@ -53,11 +57,13 @@ const addProduct = () => {
   newName.value='';
   newNumber.value=0;
 }
+
 const delItem = (id) =>{
   console.log('delItem',id);
   const index = data.value.findIndex(item=>item.id===id);
   data.value.splice(index,1);
 }
+
 const data = ref ([
   { id: 1, name: "珍珠奶茶", price: 50 },
   { id: 2, name: "冬瓜檸檬", price: 45 },
