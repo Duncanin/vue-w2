@@ -84,7 +84,7 @@ import { useToast } from 'vue-toastification'
         <!-- form -->
         <form class="mx-auto w-full flex flex-col justify-center gap-8 md:gap-6 max-w-xs"
         @submit.prevent="submit">
-          <h1 class="text-center font-bold text-xl md:text-2xl">最實用的線上代辦事項服務</h1>
+          <h1 class="text-center font-bold text-xl md:text-2xl">最實用的線上待辦事項服務</h1>
 
           <!-- email -->
           <div class="space-y-1">
