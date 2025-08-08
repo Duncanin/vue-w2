@@ -1,5 +1,4 @@
 <script setup>
-import ReviewVue from './views/ReviewVue.vue';
 
 
 </script>
@@ -7,7 +6,6 @@ import ReviewVue from './views/ReviewVue.vue';
 <template>
 
   <router-view />
-  <ReviewVue />
 
 </template>
 
