@@ -55,7 +55,7 @@
           <!-- nickname -->
           <div class="space-y-1">
             <label for="" class="block">您的暱稱</label>
-            <input type="email" name="" id="" placeholder="請輸入暱稱"
+            <input type="text" name="" id="" placeholder="請輸入暱稱"
             class="font-normal bg-white rounded-lg py-3 px-4 outline-none w-full" v-model="signUp.nickname">
           </div>
 
