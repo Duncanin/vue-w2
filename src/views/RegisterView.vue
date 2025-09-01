@@ -23,6 +23,10 @@
     } catch (error) {
       console.log('ERROR!!!!');
       console.log(error);
+
+      if (error.response) {
+        console.log('伺服器回覆：', error.response.data);
+      }
     }
   }
 
@@ -42,7 +46,7 @@
 
         <!-- form -->
         <form class="mx-auto w-full flex flex-col justify-center gap-8 md:gap-6 max-w-xs"
-        @submit.prevent="submit">
+        @submit.prevent="signUpSubmit">
           <h1 class="text-center font-bold text-xl md:text-2xl">註冊帳號</h1>
 
           <!-- email -->
